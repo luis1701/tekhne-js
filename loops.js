@@ -3,8 +3,6 @@
 const lista = [1, "a", true, { name: "luis" }, null, undefined]
             // 0   1     2          3            4       5
 
-
-
 // function printList(list) {
 //     console.log("Tamaño de la lista: ", list.length)
 //     for (let index = 0; index < list.length; index++) {
@@ -170,3 +168,23 @@ addDiscountPercentageOnList(listaProductos)
 
 // input => [1, 2, 3, 4]
 // output => 10
+
+
+function printArrayWithFuncInline (lista) {
+    lista.forEach(function (elemento, indice) {
+        console.log(elemento, indice)
+    })
+}
+
+function printSumResultWithFuncInline (lista) {
+    const result = lista.reduce(function (acc, elemento, indice) {
+        return acc + elemento
+    }, 0)
+    console.log(result)
+}
+
+printSumResultWithFuncInline([1,2,3,4,5])
+
+
+
+
