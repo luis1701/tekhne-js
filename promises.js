@@ -5,45 +5,41 @@
 
 // Ultimas versiones de js entro en concepto de async await
 
-const getProducts = async () => {
-    let products = []
-    await setTimeout(() => {
-        console.log('productos antes: ', products)
-        products = ['Papas fritas', 'Gaseosas', 'Jugos']
-        console.log('productos despues: ', products)
-    }, 3000);
-    console.log('productos: ', products)
-    return products
+console.log('Pido mis productos')
+
+// setTimeout(() => {
+//     console.log('Backend esta recuperando los productos de la base de datos para devolver al frontend')
+// }, 5000)
+
+// const promesa = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         console.log('Backend esta recuperando los productos de la base de datos para devolver al frontend')
+//         resolve('respuesta')
+//     }, 5000)
+// })
+
+function promesa2() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log('Backend esta recuperando los productos de la base de datos para devolver al frontend')
+            resolve('respuesta')
+        }, 5000)
+    })
 }
 
-const getProducts1 = () => {
-    let products = []
-    products = ['Papas fritas', 'Gaseosas', 'Jugos']
-    return products
+// promesa.then((response) => {
+//     console.log(response)
+//     console.log('Pintar la pantalla de productos')
+// })
+
+async function getBackendResult () {
+    const response = await promesa2()
+    console.log(response)
 }
 
-// Promesas comunmente
-const getProducts2 = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve(['Papas fritas', 'Gaseosas', 'Jugos', 'Galletas'])
-        // reject('error')
-    }, 3000)
-});
+getBackendResult()
 
-getProducts2
-    .then((result) => {
-        console.log("llamada a la funcion  usando promesas", result)
-    })
-    .catch((error) => {
-        console.log(error)
-    })
-
-
-// const listProducts = await getProducts()
-// console.log("llamada a la funcion sin usar promesas", listProducts)
-
-
-// getProducts()
-//     .then((result) => console.log(result))
-//     .catch(error => console.log(error))
-
+// Backend => Logica Negocio Ej: Calculos, procesamientos...
+// Frontend => Pagina Web, App de escritorio, App mobile => Rest apis http (GET, POST, PUT, PATCH, DELETE) => async
+// DB => Persistencia informacion
+ 
