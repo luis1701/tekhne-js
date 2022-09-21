@@ -114,4 +114,14 @@ const listaParaMostrar = listaAutos.map((element, index) => {
     }
 })
 
+const listaParaMostrar2 = listaAutos.reduce((accumulator, element, index) => {
+    return [...accumulator, {
+        brand: element.brand,
+        model: element.model || 'sin modelo',
+        owner: element.details.owner
+    }]
+}, [])
+
 console.log(listaParaMostrar)
+
+console.log(listaParaMostrar2)
