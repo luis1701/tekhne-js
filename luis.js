@@ -24,7 +24,14 @@
 // buscarMateria(materia) => retorna un string que es la materia que esta buscando,
 // si no se encuentra la materia debe retornar 'vacio'
 
+// getMateriasByIndice() => retorna un objeto de la siguiente manera
 
+// reduce
+// {
+//     0: "matematicas",
+//     1: "ingles"
+//     ...etc
+// }
 
 
 class Persona {
