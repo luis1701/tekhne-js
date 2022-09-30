@@ -1,3 +1,32 @@
+// Agregar los siguientes metodos a la clase estudiante:
+
+// getResumenPersona() => debe devolver un objeto con la informacion personal del estudiante
+// Ej:
+// {
+//     name: 'Luis',
+//     age: '31',
+//     gender: 'Masculino'
+// }
+
+// getResumenEstudiante() => debe devolver un objeto con la informacion personal del estudiante
+// Ej:
+// {
+//     curso: '6 sec',
+//     colegio: 'Aleman Santa Maria',
+// }
+
+// isAdult() => retorna un booleano, true si es el estudiante mayor de edad y false caso contrario
+
+// cantidadMaterias() => retorna la cantidad de materias
+
+// cantidadMateriasPrincipales() => retorna la cantidad de materias principales
+
+// buscarMateria(materia) => retorna un string que es la materia que esta buscando,
+// si no se encuentra la materia debe retornar 'vacio'
+
+
+
+
 class Persona {
     constructor(name, age, gender) {
         this.name = name
