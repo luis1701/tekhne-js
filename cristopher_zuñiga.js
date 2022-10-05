@@ -126,7 +126,36 @@ class Estudiante extends Persona{
         const SearchS=this.subjects.find(elemento=>elemento===materia)||"vacio";
         return SearchS;
     }
+    // getMateriasByIndice() => retorna un objeto de la siguiente manera
+
+// reduce
+// {
+//     0: "matematicas",
+//     1: "ingles"
+//     ...etc
+// }
+    getMateriaByIndice(){
+        //console.log(this.subjects);
+        const Indic=this.subjects.reduce((acumulador,elemento,indice)=>{
+            //console.log("elemento: " + elemento + "    acumulador actual:  " + acumulador + "  indice: " + indice)
+            
+            return{...acumulador, [indice]:elemento};
+            
+        },{});
+        //console.log(Indic);
+        return Indic;
+    }
+    //funcion que permita agregar una materia a la lista de materias
+    agregarMateria(materia){
+        
+        this.subjects.push(materia);
+        
+        
+        return this.subjects;
+    }
 }
+
+
 const estudiante=new Estudiante("cris",26,"M","curso-A","Umss",["matematicas","algebra","programacion","fisica"]);
 
 console.log(estudiante.getResumenEstudiante());
@@ -135,3 +164,5 @@ console.log("es adulto?? " + estudiante.isAdult());
 console.log("cantidad de materias: " + estudiante.cantidadMaterias());
 console.log("cantidad de materias principales: " + estudiante.cantidadMateriasPrincipales());
 console.log("materia encontrada: " + estudiante.buscarMateria("matematicas"));
+console.log( estudiante.getMateriaByIndice());
+console.log(estudiante.agregarMateria("biologia"))
